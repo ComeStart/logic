@@ -1,7 +1,8 @@
 package cn.comestart.matching.source;
 
+
 import cn.comestart.io.AbstractDBSource;
-import cn.enjoyedu.trinity.vo.Asset;
+import cn.comestart.matching.vo.Asset;
 
 public class AssetDBSource extends AbstractDBSource<Asset> {
 

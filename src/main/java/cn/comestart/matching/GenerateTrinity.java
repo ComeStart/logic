@@ -3,9 +3,9 @@ package cn.comestart.matching;
 import cn.comestart.matching.io.AssetIO;
 import cn.comestart.matching.io.FundIO;
 import cn.comestart.matching.io.TrinityIO;
-import cn.enjoyedu.trinity.vo.Asset;
-import cn.enjoyedu.trinity.vo.Fund;
-import cn.enjoyedu.trinity.vo.Trinity;
+import cn.comestart.matching.vo.Asset;
+import cn.comestart.matching.vo.Fund;
+import cn.comestart.matching.vo.Trinity;
 
 import java.util.ArrayList;
 import java.util.List;

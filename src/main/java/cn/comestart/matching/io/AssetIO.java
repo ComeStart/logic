@@ -2,7 +2,7 @@ package cn.comestart.matching.io;
 
 import cn.comestart.io.AbstractIO;
 import cn.comestart.matching.source.AssetDBSource;
-import cn.enjoyedu.trinity.vo.Asset;
+import cn.comestart.matching.vo.Asset;
 
 
 public class AssetIO extends AbstractIO<Asset> {

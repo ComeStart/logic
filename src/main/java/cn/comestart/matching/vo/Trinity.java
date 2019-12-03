@@ -1,4 +1,4 @@
-package cn.enjoyedu.trinity.vo;
+package cn.comestart.matching.vo;
 
 public class Trinity {
     private long assetId;

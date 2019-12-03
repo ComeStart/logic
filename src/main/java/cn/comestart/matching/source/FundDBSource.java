@@ -1,7 +1,8 @@
 package cn.comestart.matching.source;
 
+
 import cn.comestart.io.AbstractDBSource;
-import cn.enjoyedu.trinity.vo.Fund;
+import cn.comestart.matching.vo.Fund;
 
 public class FundDBSource extends AbstractDBSource<Fund> {
     private static FundDBSource fundSource = new FundDBSource();

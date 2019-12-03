@@ -1,0 +1,794 @@
+<p>
+	<p class="MsoNormal" align="center" style="text-indent:28.3500pt;text-align:center;">
+		<b><span>借款合同</span> </b><b></b>
+	</p>
+	<p class="MsoNormal">
+		<b>&nbsp;</b>
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>合同编号</span>:
+	</p>
+	<p class="MsoNormal">
+		${ContractNumber}&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>借款人</span>(以下简称“甲方”):
+	</p>
+	<p class="MsoNormal">
+		${BorrowerName}&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>住所</span>:
+	</p>
+	<p class="MsoNormal">
+		${BorrowerAddress}&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>身份证号码</span>:
+	</p>
+	<p class="MsoNormal">
+		${BorrowerIdentityNo}&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>联系电话</span>:
+	</p>
+	<p class="MsoNormal">
+		${BorrowerPhone}&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>电子邮箱</span>:
+	</p>
+	<p class="MsoNormal">
+		${BorrowerEmail}&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>出借人</span>(以下简称“乙方”):
+	</p>
+	<p class="MsoNormal">
+		${LenderName}&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>住所</span>:
+	</p>
+	<p class="MsoNormal">
+		${LenderAddress}&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>身份证号码</span>:
+	</p>
+	<p class="MsoNormal">
+		${LenderIdentityNo}&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>甲方因资金周转需要向乙方申请借款</span>,双方在平等、自愿的基础上经协商一致,达成如下一致意见,双方应本着诚实信用的原则共同遵守:
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>第一条借款金额、期限</span> 
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		1.1甲方向乙方借款人民币:(大写)${LoanAmountChinese}(小写￥:)${LoanAmount}, (借款金额以实际发放额为准)。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		1.2借款期限为${LoanPeriod}个月,即从年月日至年月日。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		1.3本合同项下的借款期限起始日与借据或汇款转账凭证不一致时,以第一次汇款时的转款凭证所载实际汇款日期为准,本合同约定的借款到期日也作相应调整。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		1.4借据和汇款凭证是本合同的组成部分,与本合同具有同等法律效力。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>第二条借款用途</span> 
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		2.1 甲方应将借款用于${LoanPurpose},不得用于${LoanForbiddenPurpose}及其他法律禁止的行业。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		2.2自借款发放后至借款到期前,乙方如发现甲方将借款资金挪作法律禁止的用途,乙方可以自发现之日单方面宣布借款到期,甲方应提前偿还全部借款本息、违约金及乙方实现债权所支出的费用并赔偿乙方损失。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>第三条借款的担保</span> 
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		3.1甲方以拥有的${LoanCollateral1}抵押给乙方作为担保,担保范围包括借款本金、利息、罚息及实现债权的一切费用(详见《抵押担保合同》)。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>第</span>1 页共1 页
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		3.2甲方委托作为保证人为乙方的债权提供连带责任保证,保证范围为借款本金、利息、罚息及实现债权的一切费用。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		3.3甲方以拥有的${LoanCollateral2}质押给乙方作为担保,担保范围为借款本金、利息、罚息及实现债权的一切费用。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		3.4其他担保方式:
+	</p>
+	<p class="MsoNormal">
+		${OtherLoanCollateral}&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>第四条借款利率、罚息利率和计息、结息方式</span> 
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		4.1本合同项下的借款月利率为,不足一月的,按每月30天的标准折算成日利率计算,在借款期限内,该利率保持不变。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		4.2本合同项下逾期借款或挪用借款从逾期或挪用之日起按罚息利率计收利息,直至逾期借款归还或挪用行为得到纠正为止。罚息利率的计算标准为:
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		4.2.1本合同项下逾期借款罚息利率=依本合同约定的借款利率×150%。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		4.2.2本合同项下挪用借款罚息利率=依本合同约定的借款利率×200%。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		4.2.3如果同一笔借款既逾期又挪用,罚息利率择其重者。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		4.3借款利息自借据或汇款凭证记载之日起计算。本合同项下的借款按日计息的,日利率=月利率/30。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		4.4本合同项下借款期限超过一个月的,按月结息,结息日固定为每月的20日,如遇非工作日,则顺延至下一个工作日。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>如甲方不能按照本合同约定的结息日付息</span>,视为利息逾期,逾期利息从次日起计收复利;其中,对不能按期归还逾期借款或挪用借款的,逾期利息按罚息利率标准计收复利。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>第五条借款发放的先决条件</span> 
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		5.1甲方已办妥与本合同项下借款有关的审批、抵押登记、交付、购买保险或其他法定手续;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		5.2本合同设有担保的,符合乙方要求的担保已生效且持续有效;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		5.3甲方已经按照乙方的要求开立用于提款、还款的账户;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		5.4甲方没有发生本合同所约定的任一违约情形或其他任何可能危及乙方债权安全的情形;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		5.5法律法规、规章或有权部门不禁止且不限制乙方发放本合同项下的借款;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		5.6其他条件:
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>。</span> 
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>第六条借款收款账户</span> 
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		6.1乙方将借款划至甲方指定的下列账户:
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>户名</span>:
+	</p>
+	<p class="MsoNormal">
+		${BankAccountName}&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>开户银行</span>:
+	</p>
+	<p class="MsoNormal">
+		${BankName}&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>开户帐号</span>:
+	</p>
+	<p class="MsoNormal">
+		${BankAccount}&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>金额</span>:
+	</p>
+	<p class="MsoNormal">
+		${LoanAmount}&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>第七条借款的偿还</span> 
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		7.1本合同项下甲方的还款按照下列原则偿还:
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		7.1.1乙方有权将甲方的还款首先用于偿还本合同约定的应由甲方承担而由乙方垫付的各项费用以及乙方实现债权的费用,剩余款项依据按照先还息后还本、利随本清的原则偿还。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		7.1.2甲方应按月付息,首次付息日为借款发放后的第一个结息日,最后一次还款时,利随本清。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		7.1.3还本计划
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>还本计划按以下第种方式确定</span>:
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		(壹)自借款发放后第个月开始每月还本${MonthlyRepay}万元,本金余额于借款到期日全部结清。还款日同结息日。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		(贰)借款到期日一次性结清。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		(叁)
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>第八条还款方式</span> 
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		8.1甲方应于本合同约定的还款日通过转账或现金等方式自行还款。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		8.2甲方提前还款的,须提前 3 工作日向乙方提出书面申请,经乙方同意,可提前偿还部分或全部本金。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		8.2.1甲方提前还本应按照实际用款天数及本合同约定的借款利率计算利息。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		8.2.2乙方同意甲方提前还本的,有权向甲方收取补偿金,补偿金金额按以下方式计算:补偿金金额=提前还本额×提前还款月数×1‰,不足一个月的按一个月计算。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>第九条甲乙双方的权利和义务</span> 
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		9.1甲方的权利
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		9.1.1要求乙方按合同约定发放借款;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		9.1.2按本合同约定的用途使用借款;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		9.1.3要求乙方对甲方提供的有关财务资料以及生产经营方面的商业秘密予以保密,但法律法规和规章另有规定、有权机关另有要求或双方另有约定的除外。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		9.2甲方的义务
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		9.2.1按时付息还本,承担本合同约定的各项费用,包括但不限于评估费、公证费、登记费等。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		9.2.2按照乙方的要求提供有关财务会计资料及生产经营状况资料,包括但不限于每月(季/月)前 5 个工作日内向乙方提供上月(上季度末/上月)的资产负债表、截止上季度末的损益表(事业单位为收入支出表),并且对所提供资料的真实性、完整性和有效性负责,不提供虚假材料或隐瞒重要经营财务事实;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		9.2.3甲方发生名称、法定代表人(负责人)、住所、经营范围、注册资本金或公司(企业)章程等工商登记事项变更的,应当在变更后五个工作日内书面
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>通知乙方</span>,并附变更后的相关材料;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		9.2.4甲方应按本合同约定的用途合理使用借款,不得挪用或用借款从事非法、违规交易;应配合并接受乙方对其生产经营、财务活动及本合同项下借款使用情况的检查、监督;不得抽逃资金、转移资产或利用关联等方式转移资产,以逃避对乙方的债务;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		9.2.5甲方不得以乙方提供借款所形成的资产向第三方提供担保;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		9.3乙方的权利义务
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		9.3.1乙方有权要求甲方按期偿还借款本金、利息和费用,行使本合同约定的其他各项权利,要求甲方履行其在本合同项下的其他各项义务;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		9.3.2按照本合同的约定发放借款,但因甲方原因或其他不可归咎于乙方的原因造成的迟延除外;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		9.3.3对甲方提供的有关财务资料以及生产经营方面的商业秘密应予以保密,但法律法规和规章另有规定、有权机关另有要求或双方另有约定的除外。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>第十条甲方违约责任及发生危及乙方债权情形的补救措施</span> 
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		10.1甲方违约情形
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		10.1.1甲方违反本合同任一约定义务或违反任何法定义务;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		10.1.2甲方明确表示或以其行为表明将不履行本合同项下的任一义务。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		10.2发生下列可能危及本合同项下债权安全情形之一,视为甲方违约:
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		10.2.1甲方发生承包、托管(接管)、租赁、股份制改造、减少注册资本金、投资、联营、合并、兼并、收购重组、分立、合资、(被)申请停业整顿、申请解散、被撤销、(被)申请破产、控股股东/实际控制人变更或重大资产转让、停产、歇业、被有权机关施以高额罚款、被注销登记、被吊销营业执照、涉及重大法律纠纷或司法诉讼、生产经营出现严重困难或财务状况恶化、法定代表人或主要负责人无法正常履行职责或涉及司法诉讼;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		10.2.2甲方没有履行其他到期债务,低价、无偿转让财产,减免第三方债务,怠于行使债权或其他权利,或为第三方提供担保;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		10.2.3甲方的股东滥用公司法人独立地位或股东有限责任,逃避债务;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		10.2.4本合同约定的发放借款的任一前提条件没有持续满足;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		10.3保证人出现以下可能危及本合同项下债权安全的情形之一,视为甲方违约:
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		10.3.1违反保证合同约定;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		10.3.2保证人发生承包、托管(接管)、租赁、股份制改造、减少注册资本金、投资、联营、合并、兼并、收购重组、分立、合资、(被)申请停业整顿、申请解散、被撤销、(被)申请破产、控股股东/实际控制人变更或重大资产转让、停产、歇业、被有权机关施以高额罚款、被注销登记、被吊销营业执照、涉及重大法律纠纷或司法诉讼、生产经营出现严重困难或财务状况恶化、法定代表人或主要负责人无法正常履行职责或涉及司法诉讼,可能影响保证人承担保证的能力;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		10.3.3保证人丧失或可能丧失保证能力的其他情形;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		10.4抵押、质押出现可能危及本合同项下债权安全以下情形之一,视为甲
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>方违约</span>:
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		10.4.1因第三人行为、国家征收、没收、征用、无偿收回、拆迁、市场行情变化或任何其他原因导致抵押财产或质押财产毁损、灭失、价值减少;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		10.4.2抵押财产或质押财产被查封、扣押、冻结、扣划、留置、拍卖、行政机关监管,或者权属发生争议;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		10.4.3抵押人或出质人违反抵押合同或质押合同的任一约定或陈述与保证的事项存在任何虚假、错误、遗漏;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		10.4.4可能危及乙方抵押权或质权实现的其他情形;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		10.4.5担保不成立、未生效、无效、被撤销、被解除,担保人违约或者明确表示或以其行为表明将不履行其担保责任,或担保人部分或全部丧失担保能力、担保物价值减少等其他情形,乙方认为可能危及本合同项下债权安全的;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		10.5乙方认为可能危及本合同项下债权安全的其他情形。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		10.6乙方救济措施:
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		10.6.1停止发放借款;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		10.6.2解除本合同,宣布借款立即到期,要求甲方立即偿还本合同项下所有到期及未到期债务的本金、利息和费用;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		10.6.3甲方未按本合同约定用途使用借款的,对甲方挪用的部分,自未按合同约定用途使用借款之日起至本息全部清偿之日止按罚息利率和本合同约定的结息方式计收利息和复利;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		10.6.4借款逾期的,对甲方未按时还清的借款本金和利息(包括被乙方宣布全部或部分提前到期的借款本金和利息),自逾期之日起至本息全部清偿之日止按罚息利率和本合同约定的结息方式计收利息和复利。借款逾期是指甲方未按期清偿或超过本合同约定的分次还本计划期限归还借款的行为。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>借款到期前</span>,对甲方未按时还清的利息按本合同约定的借款利率和结息方式计收复利。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		10.7其他救济措施,包括但不限于:
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		10.7.1行使担保合同项下的权利;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		10.7.2要求甲方对本合同项下所有债务提供符合乙方要求的新的担保;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		10.7.3解除本合同。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>第十一条其他条款</span> 
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		11.1本合同及与本合同项下有关担保的律师服务、保险、评估、登记、保管、鉴定、公证等费用,由甲方承担,双方另有约定的除外。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>乙方为实现债权而实际发生的一切费用</span>(包括但不限于诉讼费、仲裁费、财产保全费、差旅费、执行费、评估费、拍卖费、公证费、送达费、公告费、律师费等)均由甲方承担。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		11.2甲方同意乙方向中国人民银行及信贷征信主管部门批准建立的信用数据库或有关单位、部门查询甲方的信用状况,并同意乙方将甲方信息提供给信贷征信主管部门批准建立的信用数据库。甲方同意乙方为业务需要可以合理使用甲方信息。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		11.3本合同生效后,任何一方不得单方面变更或解除本合同。对本合同的
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>修改或变更必须经出借人和借款人协商一致</span>,并达成书面协议。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		11.4乙方有关书面文件、通知无法直接送达甲方时,甲方确认借款合同中填写的住所及电子邮箱地址为邮件寄达地址。乙方的相关文件送达至上述地址即视为送达甲方。上述地址和联系方式如有变动,甲方应于变动后3日内书面通知乙方,否则视为未变动,因未及时通知而造成的损失由甲方自行承担。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		11.5本合同的附件、各项书面补充、修订或变更,为本合同的组成部分。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		11.6本合同条款具有独立性,本合同的任何条款无效、违法或无法执行,不影响本合同其他条款的效力。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		11.7本合同适用中华人民共和国法律法规,如发生纠纷,双方应协商解决;协商不成,任何一方均有权向本合同签订地有管辖权的人民法院提起诉讼。在诉讼期间,本合同不涉及争议部分的条款仍须履行。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		11.8本合同经甲、乙双方签字或盖章后生效。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		11.9本合同一式贰份,借款人执壹份,共同借款人执 / 份,出借人执壹份,具有同等法律效力。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		11.10如甲方为两人或两人以上(即联名借款),则每一借款人均对本合同项下的全部借款本金、利息、违约金及其它费用承担不可撤销的连带清偿责任。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		11.11其他约定事项
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>特别提示</span>:
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>乙方已将本合同的全部条款向甲方作了说明</span>,并应甲方的要求在本合同中作了相应的条款说明,甲方对本合同的每一条款均进行了仔细的研究和分析,甲方对本合同各条款已做了全面准确的理解,签约各方对本合同各条款含义理解一致。
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		(以下无正文)
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>甲方</span>:${BorrowerName}乙方:${LenderName}
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		(签字捺印)${BorrowerSignCoordinate}(签字捺印)${LenderSignCoordinate}
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>签订时间</span>:${SignDate}
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>签订地点</span>:
+	</p>
+	<p class="MsoNormal">
+		&nbsp;${SignAddress}
+	</p>
+	<p class="MsoNormal" style="text-indent:28.3500pt;">
+		<span>第</span>6 页共6 页
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+	<p class="MsoNormal">
+		&nbsp;
+	</p>
+</p>
+<p>
+	<br />
+</p>

@@ -1,8 +1,9 @@
 package cn.comestart.matching.io;
 
+
 import cn.comestart.io.AbstractDBSource;
 import cn.comestart.io.AbstractIO;
-import cn.enjoyedu.trinity.vo.Trinity;
+import cn.comestart.matching.vo.Trinity;
 
 public class TrinityIO extends AbstractIO<Trinity> {
     private static TrinityIO instance = new TrinityIO();

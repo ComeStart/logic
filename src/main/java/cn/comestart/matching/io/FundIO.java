@@ -2,7 +2,7 @@ package cn.comestart.matching.io;
 
 import cn.comestart.io.AbstractIO;
 import cn.comestart.matching.source.FundDBSource;
-import cn.enjoyedu.trinity.vo.Fund;
+import cn.comestart.matching.vo.Fund;
 
 public class FundIO extends AbstractIO<Fund> {
 

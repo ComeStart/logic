@@ -1,7 +1,6 @@
 package cn.comestart.io;
 
 import cn.comestart.utils.Consts;
-import cn.comestart.io.AbstractDBSource;
 import cn.comestart.utils.SleepTools;
 
 import java.util.*;
@@ -9,10 +8,10 @@ import java.util.concurrent.*;
 
 public class AbstractIO<T>  {
 
-    private static ExecutorService executorService = Executors.newFixedThreadPool(Consts.THREAD_COUNT * 4);
-    private static CompletionService<?> completionService = new ExecutorCompletionService<>(executorService);
+    public static ExecutorService executorService = Executors.newFixedThreadPool(Consts.THREAD_COUNT * 4);
+    public static CompletionService<?> completionService = new ExecutorCompletionService<>(executorService);
 
-    private static final int GROUP_SIZE = 100;
+    public static final int GROUP_SIZE = 100;
 
     private final AbstractDBSource<T> source;
 
