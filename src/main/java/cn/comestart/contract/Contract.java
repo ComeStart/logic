@@ -5,10 +5,12 @@ public class Contract {
     private long templateId;
     private String url;
     private String content;
+    private long assetId;
 
-    public Contract(long id, long templateId) {
+    public Contract(long id, long templateId, long assetId) {
         this.id = id;
         this.templateId = templateId;
+        this.assetId = assetId;
     }
 
     public long getId() {
@@ -33,5 +35,9 @@ public class Contract {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public long getAssetId() {
+        return assetId;
     }
 }

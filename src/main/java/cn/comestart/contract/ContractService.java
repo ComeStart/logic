@@ -1,7 +1,7 @@
 package cn.comestart.contract;
 
 import java.util.Map;
-import java.util.regex.Matcher;
+import java.util.concurrent.ExecutionException;
 
 public class ContractService {
     private ContractService() {
@@ -13,11 +13,19 @@ public class ContractService {
         return instance;
     }
 
-    private ContractIO contractIO = ContractIO.getInstance();
-    public String createContract(Contract contract) {
-        Map<String, String> params = contractIO.getParams(contract.getId());
-        String templateContent = contractIO.getTemplateContent(contract.getTemplateId());
-        return makeContractFind(templateContent, params);
+    private ParamsIO paramsIO = ParamsIO.getInstance();
+    private TemplateIO templateIO = TemplateIO.getInstance();
+
+    public String createContract(Contract contract, boolean useFind) {
+        Map<String, String> params = paramsIO.getParams(contract.getId());
+        String templateContent = templateIO.getTemplateContent(contract.getTemplateId());
+        return useFind ? makeContractFind(templateContent, params) : makeContract(templateContent, params);
+    }
+
+    public String createContractAsync(Contract contract, boolean useFind) {
+        Map<String, String> params = paramsIO.getParamsFromFuture(contract.getAssetId());
+        String templateContent = templateIO.getTemplateContent(contract.getTemplateId());
+        return useFind ? makeContractFind(templateContent, params) : makeContract(templateContent, params);
     }
 
     private String makeContract(String templateContent, Map<String, String> params) {

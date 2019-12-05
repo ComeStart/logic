@@ -51,23 +51,20 @@ public class AbstractIO<T>  {
 
     @SuppressWarnings("unchecked")
     public void updateEntities(List<T> entityList) throws InterruptedException, ExecutionException {
-        int count = 0;
-
         List<T> insertList = new ArrayList<>();
         for(T entity : entityList) {
             insertList.add(entity);
             if(insertList.size() >= GROUP_SIZE) {
                 completionService.submit(new EntityWriter(insertList));
-                count++;
                 insertList = new ArrayList<>();
             }
         }
+        List<Future<T>> futureList = new ArrayList<>();
         if(!insertList.isEmpty()) {
-            completionService.submit(new EntityWriter(insertList));
-            count++;
+            futureList.add(completionService.submit(new EntityWriter(insertList)));
         }
 
-        for(int i=0;i<count;i++) completionService.take().get();
+        for(Future future : futureList) future.get();
     }
 
     private class EntityReader implements Callable {
