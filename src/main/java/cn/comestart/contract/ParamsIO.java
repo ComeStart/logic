@@ -6,8 +6,6 @@ import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 
-import java.io.FileInputStream;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,11 +21,19 @@ public class ParamsIO {
         Map<String, String> result = new HashMap<>();
         for (int i = 0; i < 200; i++) {
             result.put("param" + i, "value" + contractId + i);
-            if ((i + 1) % 20 == 0) SleepTools.ms(20);
+            if (i % 20 == 0) SleepTools.ms(20);
         }
         return result;
     }
 
+    public Map<String, String> getParamsParallel(long contractId) {
+        Map<String, String> result = new HashMap<>();
+        for (int i = 0; i < 200; i++) {
+            result.put("param" + i, "value" + contractId + i);
+        }
+        SleepTools.ms(20);
+        return result;
+    }
     private static ExecutorService executorService = Executors.newFixedThreadPool(Consts.THREAD_COUNT);
     private static CompletionService<Map<String, String>> completionService = new ExecutorCompletionService<>(executorService);
     private static ExecutorService paramsSubService = Executors.newFixedThreadPool(Consts.THREAD_COUNT*4);
@@ -89,6 +95,7 @@ public class ParamsIO {
             for (int i = groupNum*20; i < (groupNum+1)*20; i++) {
                 result.put("param" + i, "value" + assetId + i);
             }
+            SleepTools.ms(20);
             return result;
         }
     }

@@ -29,7 +29,11 @@ public class ContractIO extends AbstractIO<Contract> {
 
     private ParamsIO paramsIO = ParamsIO.getInstance();
 
-    public List<Contract> getEmptyContract(int assetNum, boolean warmParams) {
+    public List<Contract> getEmptyContract(int assetNum, boolean warmParams) throws InterruptedException {
+        return getEmptyContract(assetNum, warmParams, null);
+    }
+
+    public List<Contract> getEmptyContract(int assetNum, boolean warmParams, BlockingQueue<List<Contract>> queue) throws InterruptedException {
         // get assets
         List<Long> assetIdList = new ArrayList<>();
         for (int i = 0; i < assetNum; i++) {
@@ -44,13 +48,27 @@ public class ContractIO extends AbstractIO<Contract> {
         }
 
         List<Contract> result = new ArrayList<>();
+        List<Contract> subList = new ArrayList<>();
+        int contractCount = 0;
         for (Long assetId : assetIdList) {
             int count = 8 + random.nextInt(4);
             for (int i = 0; i < count; i++) {
-                result.add(new Contract(random.nextInt(1_000_000), random.nextInt(300), assetId));
+                if (contractCount++ % GROUP_SIZE == 0) SleepTools.ms(20);
+                Contract contract = new Contract(random.nextInt(1_000_000), random.nextInt(300), assetId);
+                result.add(contract);
+                if (queue != null) {
+                    subList.add(contract);
+                    if (contractCount % GROUP_SIZE == 0) {
+                        queue.put(subList);
+                        subList = new ArrayList<>();
+                    }
+                }
             }
         }
-        SleepTools.ms(20);
+        if(queue != null && !subList.isEmpty()) {
+            queue.put(subList);
+            System.out.println("剩余合同数量" + subList.size());
+        }
 
         return result;
     }
@@ -60,8 +78,8 @@ public class ContractIO extends AbstractIO<Contract> {
         SleepTools.ms(20);
     }
 
-    public Future<Contract> updateContractAsync(Contract contract) {
-        return AbstractIO.completionService.submit(new ContractUpdater(contract));
+    public Future<List<Contract>> updateContractAsync(List<Contract> contractList) {
+        return AbstractIO.completionService.submit(new ContractUpdater(contractList));
     }
 
     public String uploadContract(Contract contract) {
@@ -92,16 +110,16 @@ public class ContractIO extends AbstractIO<Contract> {
     }
 
     private static class ContractUpdater implements Callable {
-        private Contract contract;
+        private List<Contract> contractList;
 
-        private ContractUpdater(Contract contract) {
-            this.contract = contract;
+        private ContractUpdater(List<Contract> contractList) {
+            this.contractList = contractList;
         }
 
         @Override
-        public Contract call() throws Exception {
+        public List<Contract> call() throws Exception {
             SleepTools.ms(20);
-            return contract;
+            return contractList;
         }
     }
 }

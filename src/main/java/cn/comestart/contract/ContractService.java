@@ -1,7 +1,9 @@
 package cn.comestart.contract;
 
+import org.apache.commons.lang.StringUtils;
+
+import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ExecutionException;
 
 public class ContractService {
     private ContractService() {
@@ -16,16 +18,14 @@ public class ContractService {
     private ParamsIO paramsIO = ParamsIO.getInstance();
     private TemplateIO templateIO = TemplateIO.getInstance();
 
-    public String createContract(Contract contract, boolean useFind) {
-        Map<String, String> params = paramsIO.getParams(contract.getId());
-        String templateContent = templateIO.getTemplateContent(contract.getTemplateId());
-        return useFind ? makeContractFind(templateContent, params) : makeContract(templateContent, params);
-    }
+    public String createContract(Contract contract, boolean useFind, int flag) {
+        Map<String, String> params;
+        if (flag == 0) params = paramsIO.getParams(contract.getId());
+        else if (flag == 1) params = paramsIO.getParamsFromFuture(contract.getAssetId());
+        else params = paramsIO.getParamsParallel(contract.getAssetId());
 
-    public String createContractAsync(Contract contract, boolean useFind) {
-        Map<String, String> params = paramsIO.getParamsFromFuture(contract.getAssetId());
-        String templateContent = templateIO.getTemplateContent(contract.getTemplateId());
-        return useFind ? makeContractFind(templateContent, params) : makeContract(templateContent, params);
+        if (!useFind) makeContract(templateIO.getTemplateContent(contract.getTemplateId()), params);
+        return makeContractFind(contract.getTemplateId(), params);
     }
 
     private String makeContract(String templateContent, Map<String, String> params) {
@@ -36,16 +36,13 @@ public class ContractService {
         return templateContent;
     }
 
-    private String makeContractFind(String templateContent, Map<String, String> params) {
+    private String makeContractFind(long templateId, Map<String, String> params) {
         StringBuilder builder = new StringBuilder();
-        int ePos = 0;
-        do {
-            int sPos = templateContent.indexOf("${", ePos);
-            if(sPos == -1) break;
-            builder.append(templateContent, ePos, sPos);
-            ePos = templateContent.indexOf("}", sPos) + 1;
-            builder.append(params.get(templateContent.substring(sPos+2, ePos-1)));
-        } while(true);
+        List<TemplateIO.Template> templateList = templateIO.getTemplate(templateId);
+        for (TemplateIO.Template t : templateList) {
+            if(StringUtils.isNotEmpty(t.getContent())) builder.append(t.getContent());
+            if(StringUtils.isNotEmpty(t.getParam())) builder.append(params.get(t.getParam()));
+        }
         return builder.toString();
     }
 
