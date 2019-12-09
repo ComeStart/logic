@@ -4,36 +4,45 @@ import cn.comestart.contract.vo.Contract;
 import cn.comestart.utils.Consts;
 import cn.comestart.utils.SleepTools;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.*;
 
+import static cn.comestart.io.AbstractIO.GROUP_SIZE;
+
 public class ContractUploader implements Runnable {
-    private static BlockingQueue<Contract> queue = new ArrayBlockingQueue<>(1000);
-    private static int THREAD_COUNT = Consts.THREAD_COUNT * 13;
+    private static BlockingQueue<List<Contract>> queue = new ArrayBlockingQueue<>(100);
 
     private ContractUploader() {
     }
 
-    public static void uploadContractPipeline(Contract contract) throws InterruptedException {
+    public static void uploadContractPipeline(List<Contract> contracts) throws InterruptedException {
 //        System.out.println("开始上传合同，id " + contract.getId());
-        queue.put(contract);
+        queue.put(contracts);
     }
 
     public static void init() {
-        for (int i = 0; i < THREAD_COUNT; i++) {
-            new Thread(new ContractUploader()).start();
-        }
+        new Thread(new ContractUploader()).start();
     }
 
     @Override
     public void run() {
         while (true) {
             try {
-//                System.out.println("初始化uploader");
-                Contract contract = queue.take();
-                SleepTools.ms(10);
-                contract.setUrl("http://www.comestart.cn/fs/" + contract.getContent().substring(0, 20));
-//                System.out.println("上传合同完成,id " + contract.getId());
-                ContractUpdater.updateContractPipeline(contract);
+                List<Contract> contractList = queue.take();
+
+                // 1. set contract url
+                int contentLength = 0;
+                for (Contract contract : contractList) {
+                    contract.setUrl("http://www.comestart.cn/fs/" + contract.getContent().substring(0, 20));
+                    contentLength += contract.getContent().length();
+                }
+                // 2. upload contract list
+//                System.out.println("上传合同完成，休眠 " + contentLength / (1024 * 1024));
+                SleepTools.ms(contentLength / (1024 * 1024));
+
+                // 3. update contract
+                ContractUpdater.updateContractPipeline(contractList);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import static cn.comestart.io.AbstractIO.GROUP_SIZE;
+
 public class ContractReader implements Runnable {
     private static Random random = new Random();
 
@@ -24,20 +26,21 @@ public class ContractReader implements Runnable {
 
     @Override
     public void run() {
-        List<List<Long>> assetGroupList = CollectionTools.split(genAssetIdList(), 10);
+        List<List<Long>> assetGroupList = CollectionTools.split(genAssetIdList(), GROUP_SIZE / 10);
         int contractCount = 0;
         for (List<Long> assetGroup : assetGroupList) {
+            List<Contract> contractList = new ArrayList<>();
             for(Long assetId : assetGroup) {
                 int count = 8 + random.nextInt(4);
                 for (int i = 0; i < count; i++) {
-                    Contract contract = new Contract(random.nextInt(1_000_000), random.nextInt(300), assetId);
+                    contractList.add(new Contract(random.nextInt(1_000_000), random.nextInt(300), assetId));
                     contractCount++;
-                    try {
-                        ContractCreator.createContractPipeline(contract);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
                 }
+            }
+            try {
+                ContractCreator.createContractPipeline(contractList);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
             SleepTools.ms(20);
         }
