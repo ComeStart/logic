@@ -8,7 +8,7 @@ import java.util.concurrent.*;
 
 public class AbstractIO<T>  {
 
-    public static ExecutorService executorService = Executors.newFixedThreadPool(Consts.THREAD_COUNT * 4);
+    public static ExecutorService executorService = Executors.newFixedThreadPool(1);
     public static CompletionService<?> completionService = new ExecutorCompletionService<>(executorService);
 
     public static final int GROUP_SIZE = 100;

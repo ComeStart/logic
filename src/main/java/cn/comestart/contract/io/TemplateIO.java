@@ -1,5 +1,6 @@
-package cn.comestart.contract;
+package cn.comestart.contract.io;
 
+import cn.comestart.contract.vo.Template;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
@@ -25,15 +26,15 @@ public class TemplateIO {
                 }
             });
 
-    private static LoadingCache<Long, List<Template>> templateCache = CacheBuilder.newBuilder()
+    private static LoadingCache<Long, Template> templateCache = CacheBuilder.newBuilder()
             .maximumSize(200)
             .expireAfterAccess(10, TimeUnit.MINUTES)
-            .build(new CacheLoader<Long, List<Template>>() {
+            .build(new CacheLoader<Long, Template>() {
                 @Override
-                public List<Template> load(@SuppressWarnings("NullableProblems") Long templateId) throws Exception {
+                public Template load(@SuppressWarnings("NullableProblems") Long templateId) throws Exception {
                     String templateContent = readFile(templateId);
 
-                    List<Template> result = new ArrayList<>();
+                    List<Template.TemplateElem> elems = new ArrayList<>();
                     int ePos = 0;
                     do {
                         int sPos = templateContent.indexOf("${", ePos);
@@ -41,9 +42,9 @@ public class TemplateIO {
                         String content = templateContent.substring(ePos, sPos);
                         ePos = templateContent.indexOf("}", sPos) + 1;
                         String param = templateContent.substring(sPos+2, ePos-1);
-                        result.add(new Template(content, param));
+                        elems.add(new Template.TemplateElem(content, param));
                     } while(true);
-                    return result;
+                    return new Template(templateId, elems);
                 }
             });
 
@@ -60,25 +61,8 @@ public class TemplateIO {
         return cache.getUnchecked(templateId);
     }
 
-    public List<Template> getTemplate(long templateId) {
+    public Template getTemplate(long templateId) {
         return templateCache.getUnchecked(templateId);
     }
 
-    public static class Template {
-        private String content;
-        private String param;
-
-        public Template(String content, String param) {
-            this.content = content;
-            this.param = param;
-        }
-
-        public String getContent() {
-            return content;
-        }
-
-        public String getParam() {
-            return param;
-        }
-    }
 }

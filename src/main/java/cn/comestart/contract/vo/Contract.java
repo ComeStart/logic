@@ -1,4 +1,4 @@
-package cn.comestart.contract;
+package cn.comestart.contract.vo;
 
 public class Contract {
     private long id;

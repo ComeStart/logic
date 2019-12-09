@@ -1,8 +1,11 @@
-package cn.comestart.contract;
+package cn.comestart.contract.service;
 
+import cn.comestart.contract.io.ParamsIO;
+import cn.comestart.contract.io.TemplateIO;
+import cn.comestart.contract.vo.Contract;
+import cn.comestart.contract.vo.Template;
 import org.apache.commons.lang.StringUtils;
 
-import java.util.List;
 import java.util.Map;
 
 public class ContractService {
@@ -36,10 +39,10 @@ public class ContractService {
         return templateContent;
     }
 
-    private String makeContractFind(long templateId, Map<String, String> params) {
+    public String makeContractFind(long templateId, Map<String, String> params) {
         StringBuilder builder = new StringBuilder();
-        List<TemplateIO.Template> templateList = templateIO.getTemplate(templateId);
-        for (TemplateIO.Template t : templateList) {
+        Template template = templateIO.getTemplate(templateId);
+        for (Template.TemplateElem t : template.getTemplateElemList()) {
             if(StringUtils.isNotEmpty(t.getContent())) builder.append(t.getContent());
             if(StringUtils.isNotEmpty(t.getParam())) builder.append(params.get(t.getParam()));
         }

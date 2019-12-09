@@ -1,5 +1,11 @@
 package cn.comestart.contract;
 
+import cn.comestart.contract.io.ContractIO;
+import cn.comestart.contract.pipeline.ContractReader;
+import cn.comestart.contract.pipeline.ContractUpdater;
+import cn.comestart.contract.pipeline.ContractUploader;
+import cn.comestart.contract.service.ContractService;
+import cn.comestart.contract.vo.Contract;
 import cn.comestart.utils.Consts;
 
 import java.util.ArrayList;
@@ -12,7 +18,7 @@ public class ContractGenerator {
 
     private static BlockingQueue<List<Contract>> queue = new ArrayBlockingQueue<>(1000);
 
-    private static ExecutorService executorService = Executors.newFixedThreadPool(Consts.THREAD_COUNT);
+    private static ExecutorService executorService = Executors.newFixedThreadPool(1);
 
     public static void main(String[] args) {
         ContractGenerator instance = new ContractGenerator();
@@ -20,7 +26,7 @@ public class ContractGenerator {
         long startMillis = System.currentTimeMillis();
 
         try {
-            List<Contract> contractList = instance.createContractAsync();
+            List<Contract> contractList = instance.createContractAsyncPipeline();
             if (contractList != null)
                 System.out.println("已生成" + contractList.size() + "个合同，用时 " + (System.currentTimeMillis() - startMillis) + " ms");
         } catch (Exception e) {
@@ -64,6 +70,15 @@ public class ContractGenerator {
         }
         contractIO.updateEntities(contractList);
         return contractList;
+    }
+
+    private List<Contract> createContractAsyncPipeline() {
+        long startMillis = System.currentTimeMillis();
+        ContractReader.init(1000);
+        cn.comestart.contract.pipeline.ContractCreator.init();
+        ContractUploader.init();
+        ContractUpdater.init(startMillis);
+        return null;
     }
 
     private static class ContractCreator implements Runnable {

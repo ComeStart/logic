@@ -1,7 +1,9 @@
-package cn.comestart.contract;
+package cn.comestart.contract.io;
 
+import cn.comestart.contract.vo.Contract;
 import cn.comestart.io.AbstractDBSource;
 import cn.comestart.io.AbstractIO;
+import cn.comestart.utils.Consts;
 import cn.comestart.utils.SleepTools;
 
 import java.util.*;
@@ -33,6 +35,13 @@ public class ContractIO extends AbstractIO<Contract> {
         return getEmptyContract(assetNum, warmParams, null);
     }
 
+    /**
+     * @param assetNum   资产数量
+     * @param warmParams 是否预热参数
+     * @param queue      阻塞队列，用于存放结果，生产者消费者模式
+     * @return 合同列表
+     * @throws InterruptedException 阻塞队列的put操作
+     */
     public List<Contract> getEmptyContract(int assetNum, boolean warmParams, BlockingQueue<List<Contract>> queue) throws InterruptedException {
         // get assets
         List<Long> assetIdList = new ArrayList<>();
@@ -59,14 +68,32 @@ public class ContractIO extends AbstractIO<Contract> {
                 if (queue != null) {
                     subList.add(contract);
                     if (contractCount % GROUP_SIZE == 0) {
-                        queue.put(subList);
+                        List<List<Contract>> contractList = new ArrayList<>();
+                        for (int j = 0; j < Consts.THREAD_COUNT; j++) {
+                            contractList.add(new ArrayList<>());
+                        }
+                        for (int j = 0; j < contractCount; j++) {
+                            contractList.get(j % Consts.THREAD_COUNT).add(subList.get(j));
+                        }
+                        for (List<Contract> contractSubList : contractList) {
+                            queue.put(contractSubList);
+                        }
                         subList = new ArrayList<>();
                     }
                 }
             }
         }
-        if(queue != null && !subList.isEmpty()) {
-            queue.put(subList);
+        if (queue != null && !subList.isEmpty()) {
+            List<List<Contract>> contractList = new ArrayList<>();
+            for (int j = 0; j < Consts.THREAD_COUNT; j++) {
+                contractList.add(new ArrayList<>());
+            }
+            for (int j = 0; j < contractCount; j++) {
+                contractList.get(j % Consts.THREAD_COUNT).add(subList.get(j));
+            }
+            for (List<Contract> contractSubList : contractList) {
+                queue.put(contractSubList);
+            }
             System.out.println("剩余合同数量" + subList.size());
         }
 

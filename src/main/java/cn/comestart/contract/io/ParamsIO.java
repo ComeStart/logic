@@ -1,4 +1,4 @@
-package cn.comestart.contract;
+package cn.comestart.contract.io;
 
 import cn.comestart.utils.Consts;
 import cn.comestart.utils.SleepTools;
@@ -34,10 +34,17 @@ public class ParamsIO {
         SleepTools.ms(20);
         return result;
     }
-    private static ExecutorService executorService = Executors.newFixedThreadPool(Consts.THREAD_COUNT);
-    private static CompletionService<Map<String, String>> completionService = new ExecutorCompletionService<>(executorService);
-    private static ExecutorService paramsSubService = Executors.newFixedThreadPool(Consts.THREAD_COUNT*4);
-    private static CompletionService<Map<String, String>> paramsSubCompletionService = new ExecutorCompletionService<>(paramsSubService);
+
+    public Map<String, String> getWarmedParams(long contractId) {
+        Map<String, String> result = new HashMap<>();
+        for (int i = 0; i < 200; i++) {
+            result.put("param" + i, "value" + contractId + i);
+        }
+        return result;
+    }
+
+    private static ExecutorService executorService = Executors.newFixedThreadPool(1);
+    private static ExecutorService paramsSubService = Executors.newFixedThreadPool(1);
 
     private LoadingCache<Long, Map<String, String>> cache = CacheBuilder.newBuilder()
             .maximumSize(200)
@@ -51,10 +58,15 @@ public class ParamsIO {
 
     private Map<Long, Future<Map<String, String>>> paramFutures = new ConcurrentHashMap<>();
     public void initParams(long assetId) {
-        paramFutures.put(assetId, completionService.submit(new ParamReader(assetId)));
+        paramFutures.put(assetId, executorService.submit(new ParamReader(assetId)));
     }
+
     public Map<String, String> getParamsFromFuture(long assetId) {
         return cache.getUnchecked(assetId);
+    }
+
+    public Future<Map<String, String>> getParamsFuture(long assetId) {
+        return paramFutures.get(assetId);
     }
 
     private static class ParamReader implements Callable<Map<String, String>> {
@@ -70,7 +82,7 @@ public class ParamsIO {
             Map<String, String> result = new HashMap<>();
             List<Future<Map<String, String>>> futureList = new ArrayList<>();
             for (int i=0;i<10;i++) {
-                futureList.add(paramsSubCompletionService.submit(new ParamSubReader(assetId, i)));
+                futureList.add(paramsSubService.submit(new ParamSubReader(assetId, i)));
             }
             for (Future<Map<String, String>> future : futureList) {
                 result.putAll(future.get());
