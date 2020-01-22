@@ -17,7 +17,7 @@ public class TemplateIO {
     private TemplateIO() {}
 
     private static LoadingCache<Long, String> cache = CacheBuilder.newBuilder()
-            .maximumSize(200)
+            .maximumSize(300)
             .expireAfterAccess(10, TimeUnit.MINUTES)
             .build(new CacheLoader<Long, String>() {
                 @Override
@@ -27,7 +27,7 @@ public class TemplateIO {
             });
 
     private static LoadingCache<Long, Template> templateCache = CacheBuilder.newBuilder()
-            .maximumSize(200)
+            .maximumSize(300)
             .expireAfterAccess(10, TimeUnit.MINUTES)
             .build(new CacheLoader<Long, Template>() {
                 @Override

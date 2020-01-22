@@ -31,7 +31,7 @@ public class ContractService {
         return makeContractFind(contract.getTemplateId(), params);
     }
 
-    private String makeContract(String templateContent, Map<String, String> params) {
+    public String makeContract(String templateContent, Map<String, String> params) {
         for (Map.Entry<String, String> entry : params.entrySet()) {
             String param = paramPattern(entry.getKey());
             templateContent = templateContent.replaceAll(param, entry.getValue());
