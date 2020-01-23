@@ -5,6 +5,9 @@ import com.company.project.deliver.model.PayResultModel;
 import com.company.project.deliver.processor.Processor;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * 需要包在最外层，否则事务无法生效
+ */
 public class TransactionalProcessor extends ProcessorDecorator {
 
     public TransactionalProcessor(Processor processor) {
