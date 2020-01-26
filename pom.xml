@@ -12,8 +12,10 @@
 	<description>the business logic extracted from real scene</description>
 
 	<modules>
+		<module>common</module>
 		<module>contract</module>
 		<module>deliver</module>
+		<module>trinity</module>
 	</modules>
 
 	<properties>

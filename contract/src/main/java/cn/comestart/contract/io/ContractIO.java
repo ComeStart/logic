@@ -1,7 +1,7 @@
 package cn.comestart.contract.io;
 
 import cn.comestart.contract.vo.Contract;
-import cn.comestart.io.AbstractDBSource;
+import cn.comestart.io.AbstractSource;
 import cn.comestart.io.AbstractIO;
 import cn.comestart.utils.Consts;
 import cn.comestart.utils.SleepTools;
@@ -24,7 +24,7 @@ public class ContractIO extends AbstractIO<Contract> {
         this(null);
     }
 
-    protected ContractIO(AbstractDBSource<Contract> source) {
+    protected ContractIO(AbstractSource<Contract> source) {
         super(source);
     }
 

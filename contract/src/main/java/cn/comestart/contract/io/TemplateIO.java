@@ -49,7 +49,7 @@ public class TemplateIO {
             });
 
     private static String readFile(Long templateId) throws Exception{
-        try (InputStream is = new FileInputStream("src/main/resources/ContractTemplate")) {
+        try (InputStream is = new FileInputStream("contract/src/main/resources/ContractTemplate")) {
             int iAvail = is.available();
             byte[] bytes = new byte[iAvail];
             int readRes = is.read(bytes);

@@ -74,7 +74,7 @@ public class ContractGenerator {
 
     private List<Contract> createContractAsyncPipeline() {
         long startMillis = System.currentTimeMillis();
-        ContractReader.init(10000);
+        ContractReader.init(100);
         cn.comestart.contract.pipeline.ContractCreator.init();
         ContractUploader.init();
         ContractUpdater.init(startMillis);
