@@ -23,7 +23,7 @@ public class ContractCreateService {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         long start = System.currentTimeMillis();
 
-        int N = 100;
+        int N = 1;
         int count = 0;
         for (int i = 0; i < N; i++) {
             ContractDealer contractDealer = new ContractDealer();
@@ -89,7 +89,7 @@ public class ContractCreateService {
          * 获取合同参数
          */
         public Map<String, String> findContractParams(long aid) {
-            return paramsIO.getParams(aid);
+            return paramsIO.getWarmedParams(aid);
         }
 
         /**
