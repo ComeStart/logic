@@ -5,7 +5,11 @@ import cn.comestart.deliver.deliver.model.PayResultType;
 import cn.comestart.deliver.deliver.processor.Processor;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import static cn.comestart.deliver.deliver.model.PayResultType.*;
 
@@ -20,6 +24,16 @@ public class MQConsumer {
     @Resource(name = "feeProcessor")
     private Processor feeProcessor;
 
+    private Map<PayResultType, Processor> processorMap = new HashMap<>();
+
+    @PostConstruct
+    public void init() {
+        processorMap.put(VACCOUNT, vaccountProcessor);
+        processorMap.put(BANKCARD, bankcardProcessor);
+        processorMap.put(L1, l1Processor);
+        processorMap.put(FEE, feeProcessor);
+    }
+
     public void receivePayResult(byte[] data) {
         PayResultModel payResultModel = MsgFactory.genPayResult(data);
         processPayResult(payResultModel);
@@ -27,14 +41,6 @@ public class MQConsumer {
 
     private void processPayResult(PayResultModel payResultModel) {
         PayResultType payResultType = payResultModel.getPayResultType();
-        if (VACCOUNT == payResultType) {
-            vaccountProcessor.process(payResultModel);
-        } else if (BANKCARD == payResultType) {
-            bankcardProcessor.process(payResultModel);
-        } else if (L1 == payResultType) {
-            l1Processor.process(payResultModel);
-        } else if (FEE == payResultType) {
-            feeProcessor.process(payResultModel);
-        }
+        processorMap.get(payResultType).process(payResultModel);
     }
 }
