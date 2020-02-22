@@ -24,8 +24,11 @@ public class MsgFactory {
     }
 
     private static PayResultModel parsePayResult(Map<String, Object> params) {
-        PayResultModel payResultModel = new PayResultModel();
-        payResultModel.setPayResultType((PayResultType) params.get("payResultType"));
+        PayResultType payResultType = (PayResultType) params.get("payResultType");
+        PayResultModel payResultModel = payResultType.createPayResultModelProxy();
+        payResultModel.setPayResultType(payResultType);
+
+        System.out.println("PayResultModel, phase = " + payResultModel.getPhase() + ", feeType = " + payResultModel.getFeeType());
         return payResultModel;
     }
 }

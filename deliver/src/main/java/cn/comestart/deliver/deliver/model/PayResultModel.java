@@ -10,4 +10,12 @@ public class PayResultModel {
     public void setPayResultType(PayResultType payResultType) {
         this.payResultType = payResultType;
     }
+
+    public Integer getPhase() {
+        throw new UnsupportedOperationException();
+    }
+
+    public String  getFeeType() {
+        throw new UnsupportedOperationException();
+    }
 }

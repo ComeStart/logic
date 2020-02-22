@@ -34,9 +34,10 @@ public class MQConsumer {
         processorMap.put(FEE, feeProcessor);
     }
 
-    public void receivePayResult(byte[] data) {
+    public PayResultModel receivePayResult(byte[] data) {
         PayResultModel payResultModel = MsgFactory.genPayResult(data);
         processPayResult(payResultModel);
+        return payResultModel;
     }
 
     private void processPayResult(PayResultModel payResultModel) {
