@@ -23,7 +23,7 @@ public class ContractCreateService {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         long start = System.currentTimeMillis();
 
-        int N = 1;
+        int N = 200;
         int count = 0;
         for (int i = 0; i < N; i++) {
             ContractDealer contractDealer = new ContractDealer();
@@ -106,7 +106,7 @@ public class ContractCreateService {
          * @return 合同地址
          */
         public Application.Contract uploadContract(Application.Contract contract) {
-            SleepTools.ms(10);
+            SleepTools.ms(20);
             String url = "http://www.comestart.cn/fs/" + contract.getContent().substring(0, 20);
             contract.setUrl(url);
             return contract;

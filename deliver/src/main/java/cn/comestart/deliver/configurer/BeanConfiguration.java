@@ -10,12 +10,21 @@ import cn.comestart.deliver.deliver.processor.decorator.state.FeeStateMachinePro
 import cn.comestart.deliver.deliver.processor.decorator.state.L1StateMachineProcessor;
 import cn.comestart.deliver.deliver.processor.decorator.state.VAccountStateMachineProcessor;
 import cn.comestart.deliver.deliver.processor.chain.ProcessorChain;
+import cn.comestart.deliver.proxy.TestService;
+import cn.comestart.deliver.proxy.TestServiceInvocationHandler;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import javax.annotation.Resource;
+import java.lang.reflect.Proxy;
 
 
 @Configuration
 public class BeanConfiguration {
+    @Resource(name = "testService")
+    private TestService testService;
+
     @Bean
     public Processor vaccountProcessor() {
         ProcessorChain processorChain = new ProcessorChain();
@@ -40,6 +49,12 @@ public class BeanConfiguration {
     @Bean
     public Processor feeProcessor() {
         return new TransactionalProcessor(new FeeStateMachineProcessor(new FeeStatusProcessor()));
+    }
+
+    @Bean
+    public TestService testServiceProxy() {
+        return (TestService) Proxy.newProxyInstance(testService.getClass().getClassLoader(),
+                testService.getClass().getInterfaces(), new TestServiceInvocationHandler(testService));
     }
 
 }
