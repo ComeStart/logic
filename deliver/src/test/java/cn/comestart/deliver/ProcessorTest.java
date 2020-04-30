@@ -20,21 +20,25 @@ public class ProcessorTest extends Tester {
     @Test
     public void testTest() {
         System.out.println();
-//        byte[] data = VACCOUNT.name().getBytes(UTF_8);
-//        PayResultModel vaccountModel = mqConsumer.receivePayResult(data);
-//        System.out.println();
-//        data = BANKCARD.name().getBytes(UTF_8);
-//        PayResultModel bankcardModel = mqConsumer.receivePayResult(data);
-//        System.out.println();
-//        data = L1.name().getBytes(UTF_8);
-//        PayResultModel l1Model = mqConsumer.receivePayResult(data);
-//        System.out.println();
-//        data = FEE.name().getBytes(UTF_8);
-//        PayResultModel feeModel = mqConsumer.receivePayResult(data);
-//        System.out.println();
-//        System.out.println("VAccount resultType = " + vaccountModel.getPayResultType() +
-//                ", phase = " + vaccountModel.getPhase() +
-//                ", feeType = " + vaccountModel.getFeeType());
+        byte[] data = VACCOUNT.name().getBytes(UTF_8);
+        PayResultModel vaccountModel = mqConsumer.receivePayResult(data);
+        System.out.println();
+        data = BANKCARD.name().getBytes(UTF_8);
+        PayResultModel bankcardModel = mqConsumer.receivePayResult(data);
+        System.out.println();
+        data = L1.name().getBytes(UTF_8);
+        PayResultModel l1Model = mqConsumer.receivePayResult(data);
+        System.out.println();
+        data = FEE.name().getBytes(UTF_8);
+        PayResultModel feeModel = mqConsumer.receivePayResult(data);
+        System.out.println();
+        System.out.println("VAccount resultType = " + vaccountModel.getPayResultType() +
+                ", phase = " + vaccountModel.getPhase() +
+                ", feeType = " + vaccountModel.getFeeType());
+    }
+
+    @Test
+    public void dynamicProxyTest() {
         testServiceProxy.foo();
     }
 }

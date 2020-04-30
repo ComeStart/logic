@@ -12,7 +12,6 @@ import cn.comestart.deliver.deliver.processor.decorator.state.VAccountStateMachi
 import cn.comestart.deliver.deliver.processor.chain.ProcessorChain;
 import cn.comestart.deliver.proxy.TestService;
 import cn.comestart.deliver.proxy.TestServiceInvocationHandler;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
